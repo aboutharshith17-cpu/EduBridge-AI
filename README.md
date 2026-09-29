@@ -374,7 +374,7 @@ This project is licensed under the **MIT License**.
 **Harshith Kumar H S**
 
 Electronics & Instrumentation Engineering  
-Full Stack Developer |DevOps Engineer |  AI Enthusiast | Embedded Systems Developer
+Full Stack Developer | DevOps Engineer | AI Enthusiast
 
 ---
 
