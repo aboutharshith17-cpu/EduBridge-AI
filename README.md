@@ -378,4 +378,4 @@ Full Stack Developer | DevOps Engineer | AI Enthusiast
 
 ---
 
-**EduBridge AI** — *Empowering students through AI-driven mentorship, career guidance, scholarships, and internship opportunities.*
+**EduBridge AI** — *Empowering students through AI-driven mentorship, career guidance, and scholarships.*
