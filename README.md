@@ -15,7 +15,7 @@
 - 📈 Student Progress Dashboard
 - 🔔 Real-Time Notifications
 - 🧠 RAG-based AI Chat Assistant
-- 🛡️ Admin Dashboard for Platform Management
+- 🛡️ Admin Dashboard for Platform Management 
 
 ---
 
