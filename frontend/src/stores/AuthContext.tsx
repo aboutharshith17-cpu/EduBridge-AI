@@ -50,20 +50,20 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, [])
 
   const login = async (email: string, password: string) => {
-    const formData = new FormData()
+    const formData = new URLSearchParams()
     formData.append('username', email)
     formData.append('password', password)
-    
+
     const response = await api.post('/auth/login', formData, {
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     })
-    
+
     const { access_token, refresh_token } = response.data
     localStorage.setItem('access_token', access_token)
     localStorage.setItem('refresh_token', refresh_token)
     setToken(access_token)
     api.defaults.headers.common['Authorization'] = `Bearer ${access_token}`
-    
+
     const userResponse = await api.get('/auth/me')
     const userData = userResponse.data
     setUser(userData)

@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -18,6 +19,7 @@ type RegisterForm = z.infer<typeof registerSchema>
 export default function Register() {
   const navigate = useNavigate()
   const { register: registerUser, isLoading } = useAuth()
+  const [submitError, setSubmitError] = useState<string | null>(null)
   const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<RegisterForm>({
     resolver: zodResolver(registerSchema),
     defaultValues: { role: 'student' },
@@ -25,17 +27,24 @@ export default function Register() {
 
   const onSubmit = async (data: RegisterForm) => {
     try {
+      setSubmitError(null)
       await registerUser(data)
       navigate('/login')
     } catch (error: any) {
-      console.error('Registration error:', error)
+      const message = error?.response?.data?.detail || error?.message || 'Registration failed. Please try again.'
+      setSubmitError(message)
     }
   }
 
   return (
     <div className="min-h-screen flex">
-      <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-primary-600 to-primary-800 text-white p-12 flex-col justify-between">
-        <div>
+      <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-primary-600 to-primary-800 text-white p-12 flex-col justify-between relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <svg className="w-full h-full" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#FFFFFF" d="M44.7,-76.4C58.9,-69.2,71.8,-59.1,79.6,-46.3C87.4,-33.5,90.1,-18,88.1,-3.3C86.1,11.4,79.4,25.3,70.1,37.2C60.8,49.1,48.9,59,35.8,66.2C22.7,73.4,8.4,77.9,-4.8,76.1C-18,74.3,-30.1,66.2,-41.3,57.1C-52.5,48,-62.8,37.9,-69.3,25.5C-75.8,13.1,-78.5,-1.5,-74.6,-14.4C-70.7,-27.3,-60.2,-38.5,-48.5,-46.8C-36.8,-55.1,-23.9,-60.5,-10.3,-60.9C3.3,-61.3,30.5,-83.6,44.7,-76.4Z" transform="translate(100 100)" />
+          </svg>
+        </div>
+        <div className="relative">
           <div className="flex items-center gap-3 mb-8">
             <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center">
               <GraduationCap className="w-6 h-6" />
@@ -50,7 +59,7 @@ export default function Register() {
           </p>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-4 relative">
           <div className="flex items-start gap-3">
             <div className="p-2 bg-white/10 rounded-lg">
               <Users className="w-5 h-5" />
@@ -80,7 +89,7 @@ export default function Register() {
           </div>
         </div>
 
-        <div className="flex items-center gap-6 text-sm text-primary-200">
+        <div className="flex items-center gap-6 text-sm text-primary-200 relative">
           <div className="flex items-center gap-2">
             <CheckCircle2 className="w-4 h-4" />
             <span>Free to join</span>
@@ -111,6 +120,12 @@ export default function Register() {
               <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100">Get started</h2>
               <p className="text-slate-500 dark:text-slate-400 mt-1">Create your free account</p>
             </div>
+
+            {submitError && (
+              <div className="mb-6 p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-sm">
+                {submitError}
+              </div>
+            )}
 
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
               <div className="grid grid-cols-2 gap-4">
