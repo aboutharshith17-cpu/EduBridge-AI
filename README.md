@@ -1,9 +1,8 @@
-<<<<<<< HEAD 
 # 🎓 EduBridge AI
 
 > **A production-ready full-stack educational platform connecting students with mentors, providing AI-powered career recommendations, scholarship discovery, and internship tracking.**
 
----
+
 
 # 🚀 Features
 
@@ -38,7 +37,6 @@
 | Celery | Background Tasks |
 | Redis | Queue & Cache |
 
----
 
 ## Frontend
 
@@ -54,8 +52,6 @@
 | React Router v6 | Routing |
 | Axios | API Communication |
 
----
-
 ## Infrastructure
 
 - Docker
@@ -63,8 +59,6 @@
 - Nginx
 - Render
 - AWS
-
----
 
 # 📂 Project Structure
 
@@ -112,7 +106,7 @@ EduBridge-AI/
     └── deployment/
 ```
 
----
+
 
 # ⚙️ Prerequisites
 
@@ -121,7 +115,7 @@ Install the following before running the project:
 - Docker & Docker Compose
 - Python 3.11+
 - Node.js 20+
-=======
+
 # EduBridge AI
 
 A production-ready full-stack educational platform connecting students with mentors, providing AI-powered career recommendations, scholarship finder, and internship tracker.
@@ -216,7 +210,7 @@ git clone https://github.com/aboutharshith17-cpu/EduBridge-AI.git
 cd EduBridge-AI
 ```
 
----
+
 
 ## 2. Configure Environment Variables
 
@@ -239,7 +233,6 @@ GEMINI_API_KEY=
 CHROMADB_PATH=
 ```
 
----
 
 ## 3. Run with Docker
 
@@ -264,9 +257,6 @@ cp backend/.env.example backend/.env
 docker-compose up -d
 ```
 
-<<<<<<< HEAD
----
-
 ## 4. Run Database Migrations
 
 =======
@@ -276,9 +266,6 @@ docker-compose up -d
 docker-compose exec backend alembic upgrade head
 ```
 
-<<<<<<< HEAD
----
-
 ## 5. Access the Application
 
 | Service | URL |
@@ -287,8 +274,6 @@ docker-compose exec backend alembic upgrade head
 | Backend API | http://localhost:8000 |
 | Swagger Docs | http://localhost:8000/api/docs |
 | ReDoc | http://localhost:8000/api/redoc |
-
----
 
 # 💻 Development
 
@@ -302,7 +287,7 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
 
----
+
 
 ## Frontend
 
@@ -314,7 +299,6 @@ npm install
 npm run dev
 ```
 
----
 
 # 🔐 API Endpoints
 
@@ -327,7 +311,7 @@ npm run dev
 | POST | `/api/auth/refresh` | Refresh JWT Token |
 | GET | `/api/auth/me` | Current User |
 
----
+
 
 ## Student APIs
 
@@ -344,7 +328,7 @@ npm run dev
 | GET | `/api/student/progress` |
 | GET | `/api/student/recommendations` |
 
----
+
 
 ## Mentor APIs
 
@@ -356,7 +340,7 @@ npm run dev
 | GET | `/api/mentor/meetings` |
 | GET | `/api/mentor/feedback` |
 
----
+
 
 ## Admin APIs
 
@@ -368,7 +352,6 @@ npm run dev
 | POST | `/api/admin/scholarships` |
 | POST | `/api/admin/internships` |
 
----
 
 # 🤖 AI Capabilities
 
@@ -381,7 +364,6 @@ npm run dev
 - Semantic Search using ChromaDB
 - LangChain AI Pipelines
 
----
 
 # 🔒 Authentication
 
@@ -390,7 +372,7 @@ npm run dev
 - Password Hashing (bcrypt)
 - Role-Based Access Control (Student / Mentor / Admin)
 
----
+
 
 # 📦 Deployment
 
@@ -408,7 +390,7 @@ Contains deployment instructions for:
 - Redis
 - Environment Variables
 
----
+
 
 ## AWS
 
@@ -424,7 +406,7 @@ Includes:
 - SSL Configuration
 - Domain Setup
 
----
+
 
 # 📈 Future Enhancements
 
@@ -437,7 +419,7 @@ Includes:
 - AI Interview Feedback
 - Mobile Application (Flutter)
 
----
+
 
 # 🤝 Contributing
 
@@ -464,13 +446,10 @@ git push origin feature/YourFeature
 
 5. Open a Pull Request
 
----
-
 # 📄 License
 
 This project is licensed under the **MIT License**.
 
----
 
 # 👨‍💻 Developed By
 
@@ -482,7 +461,7 @@ Full Stack Developer | DevOps Engineer | AI Enthusiast
 ---
 
 **EduBridge AI** — *Empowering students through AI-driven mentorship, career guidance, and scholarships.*
-=======
+
 5. **Access the application**
 - Frontend: http://localhost:3000
 - Backend API: http://localhost:8000
@@ -548,4 +527,4 @@ See `docs/deployment/aws.md` for detailed instructions.
 
 ## License
 MIT
->>>>>>> d0cb672 (Final Commit)
+
