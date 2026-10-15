@@ -1,6 +1,6 @@
 # 🎓 EduBridge AI
 
-> **A production-ready full-stack educational platform connecting students with mentors, providing AI-powered career recommendations, scholarship discovery, and internship opportunities tracking.**
+> **A production-ready full-stack educational platform connecting students with mentors, providing AI-powered career guidance and recommendations, scholarship discovery, and internship opportunities tracking.**
 
 
 
